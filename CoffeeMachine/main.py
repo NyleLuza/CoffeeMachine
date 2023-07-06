@@ -42,8 +42,8 @@ def checkCoffee(m, coffee):
         print(str(resources))
         return
     else:
-        print("not in dic")
-        return
+        cof = input("what would you like (espresso/latte/cappuccino): ")
+        return cof
 
 def checkResources(bev):
     if(bev == "espresso"):
@@ -73,6 +73,9 @@ def coins(choice):
     total = quartersT + dimesT + nickelsT + penniesT
     if(total<MENU[choice]["cost"]):
         print("You do not have enough coins")
+    elif(total>MENU[choice]["cost"]):
+        change = total-MENU[choice]["cost"]
+        print("Here is your change ",change)
 
     return total
 while cof!= "off":
@@ -80,5 +83,7 @@ while cof!= "off":
     print("Please Insert Coins.")
     total = coins(choice)
     print(total)
+    profit += MENU[choice]["cost"]
+    print(profit)
     cof = input("what would you like (espresso/latte/cappuccino): ")
 

@@ -114,7 +114,7 @@ def coins(choice):
     pennies = (float)(input("How Many Pennies?: "))
     penniesT = pennies * 0.01
     total = quartersT + dimesT + nickelsT + penniesT
-    if (total < MENU[choice]["cost"]):
+    if total < MENU[choice]["cost"]:
         print("You do not have enough coins")
 
     return total
